@@ -10,7 +10,7 @@ import java.io.IOException; // the main method calls a method that can throw an 
 
 public class ChargeAccountTester
 {
-   public static void main(String[] args) throws IOException
+   public static void main(String[] args)
    {
       Scanner keyboard = new Scanner(System.in);
       int accountNum;

@@ -18,7 +18,7 @@ public class ChargeAccount
    private boolean isValid;
    private String fileName;
    // arraylist object for account numbers to check against
-   private ArrayList<Integer> accountList = new ArrayList<>();
+   private int[] accountList = { 5658845, 4520125, 7895122, 8777541, 8451277, 1302850, 8080152, 4562555, 5552012, 5050552, 7825877, 1250255, 1005231, 6545231, 3852085, 7576651, 7881200, 4581002 };
    
    public ChargeAccount() //no arg constructorS
    {
@@ -35,7 +35,7 @@ public class ChargeAccount
       accountNumber = account;
    }
    
-   public boolean checkValid() throws IOException
+   public boolean checkValid()
    {
       int index; // for iterating the loop
       boolean found; // to set is valid and for continuing iteration of the loop
@@ -43,22 +43,11 @@ public class ChargeAccount
       //initializing variables
       index = 0;
       found = false;
-      fileName = "testaccountnumbers.txt";
-      File file = new File(fileName);
-      Scanner refFile = new Scanner(file);
-      
-      //adding accounts to the accountList
-      while(refFile.hasNext())
-      {
-         int accountNum = refFile.nextInt();
-         accountList.add(accountNum);
-      }
-      refFile.close();
-      
+
       // search array
-      while(!found && index < accountList.size())
+      while(!found && index < accountList.length)
       {
-         if(accountList.get(index) == accountNumber)
+         if(accountList[index] == accountNumber)
          {
             found = true;
          }
